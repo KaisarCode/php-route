@@ -1,9 +1,9 @@
 <?php
 // Router
 function route($mth, $pth, $cb) {
+    $mth = trim($mth);
+    $mth = strtoupper($mth);
     $mthd = $_SERVER['REQUEST_METHOD'];
-    $mthd = strtoupper($mthd);
-    $mthd = trim($mthd);
     if ($mth == $mthd || $mth == 'all') {
         $path = $_SERVER['REQUEST_URI'];
         $path = parse_url($path, PHP_URL_PATH);
