@@ -7,7 +7,7 @@ Class Route {
         $mth = trim($mth);
         $mth = strtoupper($mth);
         $mthd = $_SERVER['REQUEST_METHOD'];
-        if ($mth == $mthd || $mth == 'all') {
+        if ($mth == $mthd || $mth == 'ALL') {
             $path = $_SERVER['REQUEST_URI'];
             $path = parse_url($path, PHP_URL_PATH);
             $path = '/'.trim($path, '/');
