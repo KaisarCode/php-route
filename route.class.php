@@ -3,7 +3,7 @@ namespace KC;
 
 // Router
 Class Route {
-    public function __construct($mth, $pth, $cb) {
+    static function add($mth, $pth, $cb) {
         $mth = trim($mth);
         $mth = strtoupper($mth);
         $mthd = $_SERVER['REQUEST_METHOD'];
@@ -15,5 +15,20 @@ Class Route {
             preg_match_all("/^$patt$/", $path, $mtch)
             && $cb($mtch);
         }
+    }
+    static function all($pth, $cb) {
+        self::add('all', $pth, $cb);
+    }
+    static function get($pth, $cb) {
+        self::add('get', $pth, $cb);
+    }
+    static function post($pth, $cb) {
+        self::add('post', $pth, $cb);
+    }
+    static function put($pth, $cb) {
+        self::add('put', $pth, $cb);
+    }
+    static function del($pth, $cb) {
+        self::add('delete', $pth, $cb);
     }
 }
