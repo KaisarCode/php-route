@@ -1,6 +1,4 @@
 <?php
-namespace KC;
-
 // Router
 Class Route {
     static function add($mth, $pth, $cb) {
